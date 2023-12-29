@@ -1,29 +1,4 @@
-import my_function from "./function/socketfunction.js";
-// const my_function = require('./function/socketfunction.js')
-// import uuid  from 'uuid';
-import helper from "./helper/helper.js";
-// const Models = require('./models');
-import message from "./Model/messages.js";
-import User from "./Model/User.js";
-import mongoose from "mongoose";
-
-import Notification from "./Model/Notification.js";
-import pkg from "agora-access-token";
-import socket_room from "./Model/socket_room.js";
-import socket_user from "./Model/socket_users.js";
-import socket_group from "./Model/socket_group.js";
-import reportModal from "./Model/socket_report.js";
-import liked from "./Model/liked.js";
-import Jobs from "./Model/Jobs.js";
-import User_profile from "./Model/User_profile.js";
-import { success } from "./config/helper.js";
-import socket_messages from "./Model/socket_messages.js";
-import CallHistory from "./Model/callhistory.js";
-
-import { RtcTokenBuilder } from "agora-access-token";
-import { parse } from "path";
-
-export default function socketIO(io) {
+module.exports = function (io) {
   io.on("connection", (socket) => {
     // ********************  Handle socket connections********************/
     socket.on("connect_user", async function (connect_listener) {
@@ -1205,5 +1180,4 @@ export default function socketIO(io) {
       }
     });
   });
-}
-           
+};
